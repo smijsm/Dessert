@@ -5,7 +5,7 @@
 
 **Making automated testing a piece of cake** 🍰 — Generate comprehensive unit tests directly from your debugger using AI.
 
-[insert video here]
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/gl03zfnjpKQ/0.jpg)](https://www.youtube.com/watch?v=gl03zfnjpKQ)
 
 ## 🎯 Why Dessert Makes Testing a Piece of Cake
 
