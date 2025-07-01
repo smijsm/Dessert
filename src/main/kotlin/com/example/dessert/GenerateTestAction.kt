@@ -27,8 +27,8 @@ import java.awt.*
 class GenerateTestAction : AnAction("Generate Test with Dessert") {
 
     // Configuration - can be moved to settings later
-    private val aiProvider = System.getenv("DESSERT_AI_PROVIDER") ?: "gemini" // openai, claude, gemini
-    private val modelName = System.getenv("DESSERT_MODEL_NAME") ?: getDefaultModel(aiProvider)
+    private val aiProvider = getEnvironmentVariable("DESSERT_AI_PROVIDER") ?: "gemini" // openai, claude, gemini
+    private val modelName = getEnvironmentVariable("DESSERT_MODEL_NAME") ?: getDefaultModel(aiProvider)
 
     private val json = Json {
         ignoreUnknownKeys = true
@@ -645,9 +645,22 @@ class GenerateTestAction : AnAction("Generate Test with Dessert") {
         e.presentation.isEnabledAndVisible = currentSession?.isPaused == true
     }
 
+    private fun getEnvironmentVariable(name: String): String? {
+        // Try IntelliJ's environment utility first (works with installed plugins)
+        com.intellij.util.EnvironmentUtil.getValue(name)?.let { return it }
+
+        // Fallback to system environment (works during development)
+        System.getenv(name)?.let { return it }
+
+        // Fallback to system property
+        System.getProperty(name.lowercase().replace("_", "."))?.let { return it }
+
+        return null
+    }
+
     // Enhanced AI prompt for multiple languages and build systems
     private fun sendToAI(debuggerOutput: String, currentFrame: XStackFrame, project: com.intellij.openapi.project.Project, packageName: String, indicator: ProgressIndicator, sourceLanguage: SourceLanguage, buildSystem: BuildSystem): String {
-        val apiKey = System.getenv("DESSERT_API_KEY")
+        val apiKey = getEnvironmentVariable("DESSERT_API_KEY")
             ?: throw Exception("DESSERT_API_KEY environment variable not set")
 
         indicator.checkCanceled()

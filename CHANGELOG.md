@@ -89,5 +89,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Test Frameworks**: framework-agnostic generation
 
 ---
+## [1.0.1] - 2025-07-01
 
+### Minor fixes
+
+- Fixed issue with environment variables retrieval on Mac
+
+---
 **Note**: This changelog will be updated with each release. For the latest changes, please check our [GitHub repository](https://github.com/smijsm/Dessert).

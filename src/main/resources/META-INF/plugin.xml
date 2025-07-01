@@ -1,7 +1,7 @@
 <idea-plugin url="https://github.com/smijsm/Dessert">
     <id>com.dessert.test-generator</id>
     <name>Dessert Test Generator</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <vendor email="smijsm@gmail.com">Michael Solovev</vendor>
     <description><![CDATA[
     <b>Generate unit tests from debugger:</b>
