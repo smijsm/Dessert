@@ -34,7 +34,7 @@
                 class="com.example.dessert.GenerateTestAction"
                 text="Generate Unit Test"
                 description="Generate unit test from debugger variable">
-            <add-to-group group-id="XDebugger.ValueGroup" anchor="last"/>
+            <add-to-group group-id="XDebugger.ValueGroup" anchor="first"/>
         </action>
     </actions>
 </idea-plugin>
