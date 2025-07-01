@@ -1,0 +1,40 @@
+<idea-plugin url="https://github.com/smijsm/Dessert">
+    <id>com.dessert.test-generator</id>
+    <name>Dessert Test Generator</name>
+    <version>1.0.0</version>
+    <vendor email="smijsm@gmail.com">Michael Solovev</vendor>
+    <description><![CDATA[
+    <b>Generate unit tests from debugger:</b>
+    <ol>
+    <li>Right click on variables in debugger and choose "Generate Test with Dessert".</li>
+    <li>Plugin will take variable values from the stack and generate a test with AI.</li>
+    <li>If file already exists – new test will be added.</li>
+    </ol>
+    Supported programming languages: Java, Kotlin, Scala.<br/>
+    Supported LLMs APIs: OpenAI, Gemini, Anthropic.<br/><br/>
+    <b>Add following environment variables before start and restart IDE:</b>
+    <ul>
+    <li>export DESSERT_API_KEY= //your openai/claude/gemini API key</li>
+    <li>export DESSERT_AI_PROVIDER=gemini // openai/claude/gemini</li>
+    <li>export DESSERT_MODEL_NAME=gemini-2.5-flash //your model name e.g. gemini-2.5-flash</li>
+    </ul>
+    <b>Contribute:</b> <a href="https://github.com/smijsm/Dessert">Project on GitHub</a>
+]]>
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.xdebugger</depends>
+
+    <idea-version since-build="251" until-build="252.*"/>
+
+    <actions>
+        <action id="com.example.dessert.GenerateTestAction"
+                class="com.example.dessert.GenerateTestAction"
+                text="Generate Unit Test"
+                description="Generate unit test from debugger variable">
+            <add-to-group group-id="XDebugger.ValueGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
