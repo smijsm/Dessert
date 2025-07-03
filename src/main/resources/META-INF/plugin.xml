@@ -1,7 +1,7 @@
 <idea-plugin url="https://github.com/smijsm/Dessert">
     <id>com.dessert.test-generator</id>
     <name>Dessert Test Generator</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <vendor email="smijsm@gmail.com">Michael Solovev</vendor>
     <description><![CDATA[
     <b>Generate unit tests from debugger:</b>
@@ -15,9 +15,10 @@
     <b>Add following environment variables before start and restart IDE:</b>
     <ul>
     <li>export DESSERT_API_KEY= //your openai/claude/gemini API key</li>
-    <li>export DESSERT_AI_PROVIDER=gemini // openai/claude/gemini</li>
-    <li>export DESSERT_MODEL_NAME=gemini-2.5-flash //your model name e.g. gemini-2.5-flash</li>
+    <li>export DESSERT_AI_PROVIDER= //your AI provider: openai/claude/gemini. Default: gemini</li>
+    <li>export DESSERT_MODEL_NAME= //your model name. Default: gemini-2.5-flash</li>
     </ul>
+    <br>
     <b>Contribute:</b> <a href="https://github.com/smijsm/Dessert">Project on GitHub</a>
 ]]>
     </description>
@@ -27,7 +28,7 @@
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.xdebugger</depends>
 
-    <idea-version since-build="251" until-build="252.*"/>
+    <idea-version since-build="251"/>
 
     <actions>
         <action id="com.example.dessert.GenerateTestAction"

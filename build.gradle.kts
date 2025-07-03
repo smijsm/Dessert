@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.example.dessert.plugin"
-version = "1.0.1"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -27,7 +27,7 @@ intellijPlatform {
 
 dependencies {
     intellijPlatform {
-        intellijIdeaCommunity("2025.1.3")
+        intellijIdeaCommunity("2025.1.1")
         pluginVerifier()
         zipSigner()
         bundledPlugin("com.intellij.java")
@@ -39,6 +39,15 @@ dependencies {
     implementation("org.mockito:mockito-core:5.5.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+
+    implementation("org.jetbrains.kotlin:kotlin-compiler-embeddable:2.1.21") {
+        exclude(group = "org.jetbrains", module = "org.jetbrains.concurrency")
+        exclude(group = "org.jetbrains", module = "org.jetbrains.org")
+    }
+    implementation("org.jetbrains.kotlin:kotlin-reflect:2.1.21") {
+        exclude(group = "org.jetbrains", module = "org.jetbrains.concurrency")
+        exclude(group = "org.jetbrains", module = "org.jetbrains.org")
+    }
 }
 
 tasks {

@@ -96,4 +96,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed issue with environment variables retrieval on Mac
 
 ---
+## [1.0.2] - 2025-07-03
+
+### Compatibility improvements
+
+- Changed minimal compatibility version to support early 2025.1 builds of IDEA.
+- Added support for Android Studio 2025.1 and later
+
+---
 **Note**: This changelog will be updated with each release. For the latest changes, please check our [GitHub repository](https://github.com/smijsm/Dessert).

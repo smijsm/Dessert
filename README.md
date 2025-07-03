@@ -25,17 +25,18 @@ Traditional test writing is time-consuming and often disconnected from real runt
 ### Prerequisites
 
 - IntelliJ IDEA 2025.1 or later
+- Android Studio 2025.1 or later
 - API key for one of the supported AI providers (OpenAI, Gemini, or Claude)
 
 ### Installation
 
 1. Download the plugin from the JetBrains Plugin Repository
 2. Install via **File → Settings → Plugins → Install Plugin from Disk**
-3. Restart IntelliJ IDEA
+3. Restart IntelliJ IDEA (or Android Studio)
 
 ### Configuration
 
-Set the following environment variables before starting IntelliJ IDEA:
+Set the following environment variables before starting IntelliJ IDEA (or Android Studio):
 
 Required: Your AI provider API key
 - `export DESSERT_API_KEY=your_api_key_here`
@@ -132,7 +133,7 @@ We welcome contributions! Please see our [GitHub repository](https://github.com/
 ### Development Setup
 
 1. Clone the repository
-2. Open in IntelliJ IDEA
+2. Open in IntelliJ IDEA (or Android Studio)
 3. Configure Gradle JVM to Java 17+
 4. Run `./gradlew runIde` to test the plugin
 
